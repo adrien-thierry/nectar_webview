@@ -1,0 +1,53 @@
+{
+  "name": "webview",
+  "description": "NectarJS webview module",
+  "main": "index.js",
+  "bugs":
+  {
+    "url": "https://github.com/adrien-thierry/nectar_webview/issues"
+  },
+
+  "directories":
+  {
+    "root": ".",
+    "lib": "lib_webview"
+  },
+  "homepage": "https://github.com/adrien-thierry/nectar_webview#readme",
+  "keywords":
+  [
+    "nectarjs",
+    "JSON",
+	"javascript"
+  ],
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/adrien-thierry/nectar_webview/blob/master/LICENSE"
+    }
+  ],
+  "repository":
+  {
+    "type": "git",
+    "url": "git+ssh://git@github.com/adrien-thierry/nectar_webview.git"
+  },
+  "version": "0.0.1",
+  "nectar":
+  {
+	"comment":
+	{
+		"linux": "This module requires gtk+-3.0 and webkit2gtk-4.0",
+		"darwin": ""
+	},
+    "env": ["std", "android", "node"],
+    "read_only": [],
+    "expose": ["__NJS_LAUNCH_WEBVIEW"],
+    "lib": 
+    {
+		"linux": "`pkg-config --cflags --libs gtk+-3.0 webkit2gtk-4.0`",
+		"win32": ["-l./lib/dll/{__ARCH__}/webview.dll", "-l./lib/dll/{__ARCH__}/WebView2Loader.dll"],
+		"darwin": "",
+		"default": ""
+	}
+  }
+}
